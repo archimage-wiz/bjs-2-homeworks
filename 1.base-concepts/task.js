@@ -16,15 +16,14 @@ function solveEquation(a, b, c) {
 // console.log(solveEquation(1, 5, 4));
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
-    let percentRelativePerMonth = percent / 100 / 12;
-    let creditBody = amount - contribution;
-    let monthlyPayment =
+    const percentRelativePerMonth = percent / 1200;
+    const creditBody = amount - contribution;
+    const monthlyPayment =
         creditBody *
-        (percentRelativePerMonth +
-            percentRelativePerMonth /
-                ((1 + percentRelativePerMonth) ** countMonths - 1));
-    let totalAmount = monthlyPayment * countMonths;
-    return Number(totalAmount.toFixed(2));
+        (percentRelativePerMonth /
+            (1 - Math.pow(1 + percentRelativePerMonth, -countMonths)));
+    const totalAmount = Number((monthlyPayment * countMonths).toFixed(2));
+    return totalAmount;
 }
 
 // console.log(calculateTotalMortgage(10, 0, 50000, 12));
