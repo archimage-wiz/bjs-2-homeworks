@@ -28,6 +28,7 @@ Student.prototype.exclude = function (reason) {
     this.excluded = reason;
 };
 
+
 let student1 = new Student("Василиса", "женский", 19);
 student1.setSubject("Algebra");
 console.log(student1.getAverage()); // 0
