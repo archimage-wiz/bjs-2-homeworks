@@ -23,12 +23,8 @@ Student.prototype.getAverage = function () {
 };
 
 Student.prototype.exclude = function (reason) {
-    if (this.marks) {
-        delete this.marks;
-    }
-    if (this.subject) {
-        delete this.subject;
-    }
+    delete this.marks;
+    delete this.subject;
     this.excluded = reason;
 };
 
@@ -45,4 +41,3 @@ student2.exclude("плохая учёба");
 student2.addMarks(4, 5, 4, 5);
 console.log(student2);
 // {name: "Артём", gender: "мужской", age: 25, excluded: "плохая учёба"}
-
