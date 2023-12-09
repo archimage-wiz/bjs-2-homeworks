@@ -30,7 +30,9 @@ class AlarmClock {
         let date = new Date();
         let hour = date.getHours();
         let min = date.getMinutes();
-        return `${hour}:${min}`;
+        let strHour = hour > 9 ? String(hour) : `0${hour}`;
+        let strMin = min > 9 ? String(min) : `0${min}`;
+        return `${strHour}:${strMin}`;
     }
     start() {
         if (this.intervalId) {
@@ -59,4 +61,3 @@ class AlarmClock {
         this.alarmCollection = [];
     }
 }
-
